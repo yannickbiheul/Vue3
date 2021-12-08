@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-29</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="radio" value="click" v-model="choix" checked>
+        <label>Clic</label>
+        <input type="radio" value="dblclick" v-model="choix">
+        <label>Double Clic</label>
+        <p>
+            <img src="https://images.unsplash.com/photo-1638869231977-567c5b62352c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1140&q=80" alt="image" :width="taille" @[choix]="modifierTaille">
+        </p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    choix: 'click',
+                    taille: 200
+                }
+            },
+            methods: {
+                modifierTaille() {
+                    this.taille = this.taille * 1.1;
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

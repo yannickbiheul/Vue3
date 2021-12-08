@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-18</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Nombre de clics sur le bouton : {{count}}</p>
+        <button v-on:click="incrementer">Incrémenter le compteur</button>
+        <button v-on:click="decrementer">Décrémenter le compteur</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                incrementer() {
+                    this.count++;
+                },
+                decrementer() {
+                    this.count--;
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

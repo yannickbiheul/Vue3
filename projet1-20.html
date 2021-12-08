@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-20</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <label>Entrez votre prénom : </label>
+        <input type="text" v-model="prenom">
+        <button v-on:click="alerte('Bonjour')">Dis Bonjour</button>
+        <button v-on:click="alerte('Hello')">Dis Hello</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    prenom: ''
+                }
+            },
+            methods: {
+                alerte(text) {
+                    alert(text + ' ' + this.prenom);
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
