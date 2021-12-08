@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-33</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ nombre }}</p>
+        <p v-once>{{ nombre }}</p>
+        <p><button @click="incremente">Incrémente</button></p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    nombre: 15
+                }
+            },
+            methods: {
+                incremente() {
+                    this.nombre++;
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
